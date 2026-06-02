@@ -39,7 +39,8 @@ html,body{ background: oklch(60% 0.012 40); }
   background: var(--bg);
   color: var(--text);
   font-family: var(--sans);
-  font-size: 19px; line-height: 1.5;
+  /* Print scale: 1 CSS px ~= 1.42 pt on the 69 x 104 cm output. */
+  font-size: 20px; line-height: 1.46;
   overflow: hidden;
   /* 3cm safe margin = 60px @20px/cm */
   padding: 60px;
@@ -51,15 +52,15 @@ html,body{ background: oklch(60% 0.012 40); }
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 10px 26px;
+  padding: 8px 24px;
 }
 .row{ display: grid; gap: 18px; }
 
 /* ============ section heads ============ */
-.shead{ display: flex; align-items: baseline; gap: 14px; margin-bottom: 6px; }
-.snum{ font-family: var(--mono); font-weight: 600; font-size: 22px; color: var(--accent); line-height: 1; letter-spacing: .02em; }
-.stitle{ font-weight: 900; font-size: 30px; line-height: 1; letter-spacing: .01em; }
-.stitle .en{ display:block; font-family: var(--mono); font-weight: 400; font-size: 13px; color: var(--faint); letter-spacing: .14em; text-transform: uppercase; margin-top: 6px; }
+.shead{ display: flex; align-items: baseline; gap: 14px; margin-bottom: 7px; }
+.snum{ font-family: var(--mono); font-weight: 600; font-size: 26px; color: var(--accent); line-height: 1; letter-spacing: .02em; }
+.stitle{ font-weight: 900; font-size: 34px; line-height: 1; letter-spacing: .01em; }
+.stitle .en{ display:block; font-family: var(--mono); font-weight: 400; font-size: 14px; color: var(--faint); letter-spacing: .14em; text-transform: uppercase; margin-top: 6px; }
 
 b, strong{ font-weight: 700; }
 .k-acc{ color: var(--accent); font-weight: 700; }
@@ -67,120 +68,133 @@ p{ text-wrap: pretty; }
 
 /* ============ HEADER ============ */
 .phead{ display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: start; }
-.kicker{ display: flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 14px; letter-spacing: .12em; color: var(--muted); margin-bottom: 16px; }
+.kicker{ display: flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 15px; letter-spacing: .12em; color: var(--muted); margin-bottom: 16px; }
 .kicker .dot{ width: 11px; height: 11px; border-radius: 50%; background: var(--accent); flex: 0 0 auto; }
-.title{ font-weight: 900; font-size: 50px; line-height: 1.06; letter-spacing: .01em; color: var(--text); }
+.title{ font-weight: 900; font-size: 56.5px; line-height: 1.02; letter-spacing: .01em; color: var(--text); }
 .title .em{ color: var(--accent); }
-.subt{ font-size: 21px; font-weight: 500; color: var(--text); margin-top: 9px; }
-.subt-en{ font-family: var(--mono); font-size: 14px; color: var(--faint); margin-top: 5px; letter-spacing: .01em; }
+.subt{ font-size: 23px; font-weight: 500; color: var(--text); margin-top: 9px; }
+.subt-en{ font-family: var(--mono); font-size: 15px; color: var(--faint); margin-top: 5px; letter-spacing: .01em; }
 
-.team{ text-align: right; font-size: 15px; min-width: 280px; padding-top: 4px; }
-.team .tlab{ font-family: var(--mono); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
-.team .names{ display: flex; gap: 14px; justify-content: flex-end; font-weight: 700; font-size: 17px; letter-spacing: .04em; }
-.team .dept{ color: var(--muted); font-size: 14px; margin-top: 6px; }
+.team{ text-align: right; font-size: 16px; min-width: 300px; padding-top: 4px; }
+.team .tlab{ font-family: var(--mono); font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.team .names{ display: flex; gap: 14px; justify-content: flex-end; font-weight: 700; font-size: 18px; letter-spacing: .04em; }
+.team .dept{ color: var(--muted); font-size: 15px; margin-top: 6px; }
 .team .adv{ margin-top: 16px; }
-.team .adv .nm{ font-weight: 700; font-size: 17px; }
+.team .adv .nm{ font-weight: 700; font-size: 18px; }
 
 /* ============ 01 motivation ============ */
-.motiv p + p{ margin-top: 11px; }
+.motiv p + p{ margin-top: 10px; }
 .lead{ line-height: 1.5; }
 
 /* ============ 02 stack ============ */
 .chips{ display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 12px; }
-.chip{ display: inline-flex; align-items: center; gap: 9px; font-family: var(--mono); font-size: 15px; color: var(--text); background: var(--node); border: 1px solid var(--border); padding: 7px 15px; border-radius: 22px; }
+.chip{ display: inline-flex; align-items: center; gap: 9px; font-family: var(--mono); font-size: 16px; color: var(--text); background: var(--node); border: 1px solid var(--border); padding: 7px 15px; border-radius: 22px; }
 .chip .cd{ width: 8px; height: 8px; border-radius: 50%; background: var(--accent-2); }
 .chip.k .cd{ background: var(--accent); }
 .stack-grp + .stack-grp{ margin-top: 10px; }
-.grp-lab{ font-family: var(--mono); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--faint); padding-bottom: 6px; margin-bottom: 8px; border-bottom: 1px solid var(--hair); display: flex; gap: 8px; }
+.grp-lab{ font-family: var(--mono); font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: var(--faint); padding-bottom: 6px; margin-bottom: 8px; border-bottom: 1px solid var(--hair); display: flex; gap: 8px; }
 .grp-lab b{ color: var(--accent); font-weight: 600; }
 .deflist{ display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; }
-.deflist dt{ font-family: var(--mono); font-size: 15px; color: var(--accent); font-weight: 600; white-space: nowrap; }
-.deflist dd{ font-size: 16px; color: var(--text); }
+.deflist dt{ font-family: var(--mono); font-size: 16px; color: var(--accent); font-weight: 600; white-space: nowrap; }
+.deflist dd{ font-size: 17px; color: var(--text); }
 .deflist dd .em{ font-weight: 700; }
 
 /* ============ 03 architecture ============ */
-.stage{ margin-bottom: 6px; }
-.stage + .stage{ margin-top: 8px; }
-.stage-lab{ font-family: var(--mono); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--faint); margin-bottom: 6px; display: flex; align-items: center; gap: 11px; }
-.stage-lab::after{ content:""; flex:1; height:1px; background: var(--hair); }
-.flow{ display: flex; align-items: stretch; gap: 0; }
-.node{
-  flex: 1; min-width: 0; background: var(--node); border: 1.5px solid var(--border);
-  border-radius: 11px; padding: 9px 14px; display: flex; flex-direction: column; gap: 3px;
+.arch-map{ display: grid; gap: 9px; }
+.arch-top{ display: grid; grid-template-columns: .9fr 36px 1.35fr; align-items: stretch; }
+.arch-arrow{ display: flex; align-items: center; justify-content: center; color: var(--faint); }
+.arch-arrow svg{ width: 22px; height: 14px; }
+.arch-node{
+  min-width: 0; background: var(--node); border: 1.5px solid var(--border);
+  border-radius: 11px; padding: 11px 15px; display: flex; align-items: center; gap: 13px;
 }
-.node .ic{ width: 26px; height: 26px; color: var(--accent); }
-.node .nt{ font-weight: 700; font-size: 18px; line-height: 1.15; }
-.node .nd{ font-family: var(--mono); font-size: 12.5px; color: var(--muted); line-height: 1.3; }
-.node.hl{ background: var(--accent-tint); border-color: var(--accent-2); border-width: 2px; }
-.arrow{ flex: 0 0 32px; display: flex; align-items: center; justify-content: center; color: var(--faint); }
-.arrow svg{ width: 22px; height: 14px; }
-.flow.sub .node{ padding: 10px 13px; border-style: solid; }
-.flow.sub .node .nt{ font-size: 15.5px; }
-.flow.sub .node .nd{ font-size: 11.5px; }
-.flow.sub .arrow{ flex-basis: 26px; }
-.outs{ display: flex; gap: 16px; }
-.outs .node{ flex: 1; flex-direction: row; align-items: center; gap: 13px; }
-.outs .node .ic{ flex: 0 0 auto; width: 28px; height: 28px; }
-.outs .node .txt .nt{ font-size: 18px; }
-.outs .node .txt .nd{ font-size: 12.5px; margin-top: 2px; }
+.arch-node .ic{ width: 28px; height: 28px; color: var(--accent); flex: 0 0 auto; }
+.arch-node .nt{ display: block; font-weight: 800; font-size: 20px; line-height: 1.12; }
+.arch-node .nd{ display: block; font-family: var(--mono); font-size: 14px; color: var(--muted); line-height: 1.28; margin-top: 3px; }
+.arch-node.core{ background: var(--accent-tint); border-color: var(--accent-2); border-width: 2px; }
+.arch-lanes{ display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.lane{
+  background: var(--panel-2); border: 1px solid var(--border); border-radius: 12px;
+  padding: 10px 13px 12px;
+}
+.lane-title{ font-family: var(--mono); font-weight: 600; font-size: 14px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.steps{ display: grid; gap: 6px; }
+.steps.infer{ grid-template-columns: repeat(3, 1fr); gap: 7px; }
+.step{
+  min-width: 0; background: var(--node); border: 1px solid var(--border); border-radius: 9px;
+  padding: 8px 10px; min-height: 66px;
+}
+.step.wide{ min-height: 58px; display: flex; align-items: center; gap: 12px; }
+.step .nt{ display: block; font-weight: 700; font-size: 17px; line-height: 1.15; }
+.step .nd{ display: block; font-family: var(--mono); font-size: 13px; color: var(--muted); line-height: 1.28; margin-top: 4px; }
+.step.hot{ background: var(--accent-tint); border-color: var(--accent-2); }
+.step .mini{ width: 22px; height: 22px; color: var(--accent); flex: 0 0 auto; }
+.abi-strip{
+  display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center;
+  background: var(--node-2); border: 1px dashed var(--accent-2); border-radius: 10px; padding: 9px 13px;
+}
+.abi-title{ font-family: var(--mono); font-weight: 600; font-size: 14px; color: var(--accent); letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+.abi-list{ display: flex; flex-wrap: wrap; gap: 7px; }
+.abi-chip{ font-family: var(--mono); font-size: 13.5px; color: var(--text); background: var(--node); border: 1px solid var(--hair); border-radius: 18px; padding: 4px 10px; }
 
 /* ============ 04 results ============ */
-.stats{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 9px; }
+.stats{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 8px; }
 .stat{ background: var(--node); border: 1px solid var(--border); border-radius: 12px; padding: 11px 18px; }
-.stat .big{ font-weight: 900; font-size: 50px; line-height: .9; color: var(--accent); letter-spacing: -.01em; }
-.stat .big sub{ font-size: 20px; font-weight: 700; vertical-align: baseline; margin-left: 2px; }
-.stat .sl{ font-weight: 700; font-size: 16px; margin-top: 8px; }
-.stat .se{ font-family: var(--mono); font-size: 11.5px; color: var(--faint); letter-spacing: .08em; text-transform: uppercase; margin-top: 3px; }
-.res-grid{ display: grid; grid-template-columns: 0.92fr 1.08fr 0.85fr; gap: 16px; }
-.subpanel{ background: var(--panel-2); border: 1px solid var(--border); border-radius: 12px; padding: 13px 18px; }
-.sp-title{ font-weight: 700; font-size: 17px; }
-.sp-en{ font-family: var(--mono); font-size: 11.5px; color: var(--faint); letter-spacing: .1em; text-transform: uppercase; margin: 3px 0 12px; }
+.stat .big{ font-weight: 900; font-size: 56px; line-height: .9; color: var(--accent); letter-spacing: -.01em; }
+.stat .big sub{ font-size: 22px; font-weight: 700; vertical-align: baseline; margin-left: 2px; }
+.stat .sl{ font-weight: 700; font-size: 18px; margin-top: 8px; }
+.stat .se{ font-family: var(--mono); font-size: 13px; color: var(--faint); letter-spacing: .08em; text-transform: uppercase; margin-top: 3px; }
+.res-grid{ display: grid; grid-template-columns: 0.72fr 1.35fr 0.83fr; gap: 12px; }
+.subpanel{ background: var(--panel-2); border: 1px solid var(--border); border-radius: 12px; padding: 10px 14px; }
+.sp-title{ font-weight: 700; font-size: 19px; }
+.sp-en{ font-family: var(--mono); font-size: 13px; color: var(--faint); letter-spacing: .1em; text-transform: uppercase; margin: 3px 0 12px; }
 
 /* bar chart */
-.chart{ display: flex; align-items: flex-end; gap: 30px; height: 118px; padding: 0 8px; }
+.chart{ display: flex; align-items: flex-end; gap: 24px; height: 96px; padding: 0 8px; }
 .cbar{ flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; gap: 9px; }
 .cbar .bar{ width: 70%; border-radius: 6px 6px 0 0; position: relative; }
 .cbar .bar.cpu{ background: oklch(72% 0.013 40); }
 .cbar .bar.npu{ background: var(--accent); }
-.cbar .bar .v{ position: absolute; top: -32px; left: 0; right: 0; text-align: center; font-weight: 900; font-size: 26px; color: var(--text); }
-.cbar .bl{ font-family: var(--mono); font-size: 12.5px; color: var(--muted); }
+.cbar .bar .v{ position: absolute; top: -34px; left: 0; right: 0; text-align: center; font-weight: 900; font-size: 28px; color: var(--text); }
+.cbar .bl{ font-family: var(--mono); font-size: 13.5px; color: var(--muted); }
 .chartpanel{ display: flex; flex-direction: column; }
 .chart-note{ margin-top: auto; display: flex; align-items: center; gap: 13px; padding-top: 9px; margin-top: 9px; border-top: 1px solid var(--hair); }
-.chart-note .cn-big{ font-weight: 900; font-size: 32px; color: var(--accent); line-height: 1; letter-spacing: -.01em; flex: 0 0 auto; }
-.chart-note .cn-tx{ font-size: 13.5px; line-height: 1.35; color: var(--muted); }
+.chart-note .cn-big{ font-weight: 900; font-size: 34px; color: var(--accent); line-height: 1; letter-spacing: -.01em; flex: 0 0 auto; }
+.chart-note .cn-tx{ font-size: 15px; line-height: 1.35; color: var(--muted); }
 
 /* demos */
 .demos{ display: flex; flex-direction: column; gap: 12px; }
-.demo{ display: flex; flex-direction: column; flex: 1; min-height: 0; margin: 0; }
-.demo figcaption{ font-family: var(--mono); font-size: 12px; color: var(--faint); margin-top: 6px; line-height: 1.3; }
+.demo{ display: flex; flex-direction: column; flex: 0 0 auto; min-height: 0; margin: 0; }
+.demo figcaption{ font-family: var(--mono); font-size: 13.5px; color: var(--faint); margin-top: 6px; line-height: 1.3; }
 .imgslot{
   flex: 1; min-height: 0; overflow: hidden;
   background: var(--node-2);
   border: 1px solid var(--border); border-radius: 10px;
   display: flex; align-items: center; justify-content: center; text-align: center;
-  font-family: var(--mono); font-size: 13px; color: var(--muted); padding: 0;
+  font-family: var(--mono); font-size: 14px; color: var(--muted); padding: 0;
 }
 .imgslot img{ width: 100%; height: 100%; object-fit: cover; border-radius: 9px; display: block; }
-table.res{ width: 100%; border-collapse: collapse; font-size: 15px; }
-table.res td{ padding: 4px 4px; border-bottom: 1px solid var(--hair); vertical-align: top; }
+.demo .imgslot{ height: 188px; flex: 0 0 auto; }
+table.res{ width: 100%; border-collapse: collapse; font-size: 16px; }
+table.res td{ padding: 3px 4px; border-bottom: 1px solid var(--hair); vertical-align: top; }
 table.res tr:last-child td{ border-bottom: none; }
-table.res td:first-child{ font-family: var(--mono); font-size: 13px; color: var(--muted); white-space: nowrap; width: 30%; padding-top: 9px; }
+table.res td:first-child{ font-family: var(--mono); font-size: 14px; color: var(--muted); white-space: nowrap; width: 30%; padding-top: 9px; }
 table.res td:last-child{ font-weight: 500; }
 table.res .em{ color: var(--accent); font-weight: 700; }
 
 /* ============ 05 conclusion ============ */
-.concl-grid{ display: grid; grid-template-columns: 1fr 280px; gap: 26px; align-items: stretch; }
+.concl-grid{ display: grid; grid-template-columns: 1fr 170px; gap: 18px; align-items: stretch; }
 .concl-text .lead{ line-height: 1.5; }
-ul.future{ list-style: none; display: grid; gap: 6px; margin-top: 11px; }
-ul.future li{ position: relative; padding-left: 28px; font-size: 16px; line-height: 1.42; }
-ul.future li::before{ content:"◆"; position: absolute; left: 2px; top: 1px; color: var(--accent); font-size: 13px; }
-.qr-panel{ background: var(--panel-2); border: 1px solid var(--border); border-radius: 12px; padding: 22px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; }
-.qr-box{ width: 158px; height: 158px; background: #fff; border: 1px solid var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+ul.future{ list-style: none; display: none; gap: 6px; margin-top: 11px; }
+ul.future li{ position: relative; padding-left: 28px; font-size: 18px; line-height: 1.42; }
+ul.future li::before{ content:"◆"; position: absolute; left: 2px; top: 1px; color: var(--accent); font-size: 14px; }
+.qr-panel{ background: var(--panel-2); border: 1px solid var(--border); border-radius: 12px; padding: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; }
+.qr-box{ width: 86px; height: 86px; background: #fff; border: 1px solid var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
 .qr-box img{ width: 100%; height: 100%; object-fit: contain; display: block; }
 .qr-cap{ text-align: center; }
-.qr-cap .qt{ font-weight: 700; font-size: 18px; }
-.qr-cap .qs{ font-size: 13px; color: var(--muted); margin-top: 4px; }
-.qr-cap .qurl{ font-family: var(--mono); font-size: 12px; color: var(--accent); margin-top: 8px; }
+.qr-cap .qt{ font-weight: 700; font-size: 16px; }
+.qr-cap .qs{ display: none; font-size: 15px; color: var(--muted); margin-top: 4px; }
+.qr-cap .qurl{ font-family: var(--mono); font-size: 13px; color: var(--accent); margin-top: 8px; }
 
 /* ============ PRINT — 69 × 104 cm, no page margin, full-bleed ============ */
 @media print{
@@ -197,9 +211,9 @@ ul.future li::before{ content:"◆"; position: absolute; left: 2px; top: 1px; co
   <header class="phead">
     <div>
       <div class="kicker"><span class="dot"></span>國立成功大學 · 資訊工程學系 · 114 學年度專題成果展</div>
-      <h1 class="title">MediaPipe 手勢辨識<br>於 <span class="em">聯詠 NT98690</span> 平台移植</h1>
-      <p class="subt">以 Novatek AI3/NPU 加速推論，並發布 microROS 手勢指令</p>
-      <p class="subt-en">Porting MediaPipe Hands to the Novatek NT98690 — AI3/NPU inference &amp; microROS command publishing</p>
+      <h1 class="title">基於手型辨識的<br><span class="em">聯詠開發板</span>系統移植</h1>
+      <p class="subt">以 Novatek AI3/NPU 加速推論，並預留 microROS 手勢指令介面</p>
+      <p class="subt-en">Porting MediaPipe Hands to the Novatek NT98690 — AI3/NPU inference &amp; microROS command interface</p>
     </div>
     <div class="team">
       <div class="tlab">組員 · Team</div>
@@ -228,7 +242,6 @@ ul.future li::before{ content:"◆"; position: absolute; left: 2px; top: 1px; co
         <span class="chip k"><span class="cd"></span>AI3 / NPU</span>
         <span class="chip"><span class="cd"></span>HDAL Pipeline</span>
         <span class="chip"><span class="cd"></span>NVT Model</span>
-        <span class="chip"><span class="cd"></span>microROS</span>
       </div>
       <div class="stack-grp">
         <div class="grp-lab">硬體平台 · <b>Hardware</b></div>
@@ -243,6 +256,7 @@ ul.future li::before{ content:"◆"; position: absolute; left: 2px; top: 1px; co
         <dl class="deflist">
           <dt>MediaPipe</dt><dd>graph 執行 · SSD decode · NMS · rect／landmark 投影</dd>
           <dt>AI3/NPU</dt><dd>palm detector 與 hand landmark 模型推論</dd>
+          <dt>Languages</dt><dd>C++ · Zig · Python（graph glue／板端 ABI／校正工具）</dd>
         </dl>
       </div>
     </section>
@@ -252,65 +266,58 @@ ul.future li::before{ content:"◆"; position: absolute; left: 2px; top: 1px; co
   <section class="panel arch">
     <div class="shead"><span class="snum">03</span><h2 class="stitle">系統架構與資料流<span class="en">System architecture &amp; data flow</span></h2></div>
 
-    <div class="stage">
-      <div class="stage-lab">主資料流 · Camera → Board → Output</div>
-      <div class="flow">
-        <div class="node">
-          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2.5" y="6.5" width="19" height="13" rx="2.5"/><path d="M8 6.5l1.5-2.5h5L16 6.5"/><circle cx="12" cy="13" r="3.5"/></svg>
-          <span class="nt">影像感測</span><span class="nd">IMX335 Sensor · NV12 / YUV</span>
+    <div class="arch-map">
+      <div class="arch-top">
+        <div class="arch-node">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 17.5V6.5A2.5 2.5 0 016.5 4h11A2.5 2.5 0 0120 6.5v11a2.5 2.5 0 01-2.5 2.5h-11A2.5 2.5 0 014 17.5z"/><path d="M8 8l4 4-4 4M13 16h4"/></svg>
+          <div><span class="nt">Zig Launcher</span><span class="nd">app live hand_landmark.task</span></div>
         </div>
-        <div class="arrow"><svg viewBox="0 0 22 14"><path d="M0 7h16M13 3l5 4-5 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></div>
-        <div class="node">
-          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8 20h8M12 16.5V20"/></svg>
-          <span class="nt">HDAL Pipeline</span><span class="nd">video capture / process</span>
-        </div>
-        <div class="arrow"><svg viewBox="0 0 22 14"><path d="M0 7h16M13 3l5 4-5 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></div>
-        <div class="node">
+        <div class="arch-arrow"><svg viewBox="0 0 22 14"><path d="M0 7h16M13 3l5 4-5 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></div>
+        <div class="arch-node core">
           <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="12" r="2.5"/><path d="M8.2 7.2l7.6 3.6M8.2 16.8l7.6-3.6"/></svg>
-          <span class="nt">MediaPipe Graph</span><span class="nd">geometry / postprocess</span>
-        </div>
-        <div class="arrow"><svg viewBox="0 0 22 14"><path d="M0 7h16M13 3l5 4-5 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></div>
-        <div class="node hl">
-          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 3v3M12 3v3M15 3v3M9 18v3M12 18v3M15 18v3M3 9h3M3 12h3M3 15h3M18 9h3M18 12h3M18 15h3"/></svg>
-          <span class="nt">AI3 / NPU 推論</span><span class="nd">NVT model · 硬體加速</span>
-        </div>
-        <div class="arrow"><svg viewBox="0 0 22 14"><path d="M0 7h16M13 3l5 4-5 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></div>
-        <div class="node">
-          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 11V5.5a1.5 1.5 0 013 0V10m0-.5V4.5a1.5 1.5 0 013 0V10m0-.5V6a1.5 1.5 0 013 0v7c0 3.5-2.5 7-6.5 7S8 17 7 15l-2-3.5a1.6 1.6 0 012.7-1.6L8 11"/></svg>
-          <span class="nt">手勢判斷</span><span class="nd">21 landmarks → gesture</span>
+          <div><span class="nt">MediaPipe CalculatorGraph owns runtime</span><span class="nd">bundle loader · scheduler · capture → infer → overlay → HDMI</span></div>
         </div>
       </div>
-    </div>
 
-    <div class="stage">
-      <div class="stage-lab">NPU 模型流程 · Hand Landmark Pipeline</div>
-      <div class="flow sub">
-        <div class="node"><span class="nt">Palm Detector</span><span class="nd">192×192 RGB · AI3/NPU</span></div>
-        <div class="arrow"><svg viewBox="0 0 22 14"><path d="M0 7h16M13 3l5 4-5 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></div>
-        <div class="node"><span class="nt">SSD Decode + NMS</span><span class="nd">rotated hand rect</span></div>
-        <div class="arrow"><svg viewBox="0 0 22 14"><path d="M0 7h16M13 3l5 4-5 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></div>
-        <div class="node"><span class="nt">Rotated Crop</span><span class="nd">ImageToTensor 224×224</span></div>
-        <div class="arrow"><svg viewBox="0 0 22 14"><path d="M0 7h16M13 3l5 4-5 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></div>
-        <div class="node"><span class="nt">Hand Landmark</span><span class="nd">AI3/NPU · presence / handedness</span></div>
-        <div class="arrow"><svg viewBox="0 0 22 14"><path d="M0 7h16M13 3l5 4-5 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></div>
-        <div class="node"><span class="nt">Gesture Class</span><span class="nd">21 landmarks → 手勢預判</span></div>
+      <div class="arch-lanes">
+        <div class="lane">
+          <div class="lane-title">Full-rate preview lane</div>
+          <div class="steps">
+            <div class="step wide">
+              <svg class="mini" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2.5" y="6.5" width="19" height="13" rx="2.5"/><path d="M8 6.5l1.5-2.5h5L16 6.5"/><circle cx="12" cy="13" r="3.5"/></svg>
+              <div><span class="nt">IMX335 → HDAL NV12 frame</span><span class="nd">native camera / VPE output · one outstanding buffer</span></div>
+            </div>
+            <div class="step wide">
+              <svg class="mini" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              <div><span class="nt">Live HDMI Preview Sink</span><span class="nd">draw cached result on every frame · release HDAL buffer</span></div>
+            </div>
+            <div class="step wide hot">
+              <svg class="mini" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 6h16M4 12h16M4 18h10"/><circle cx="18" cy="18" r="2"/></svg>
+              <div><span class="nt">HDMI overlay + timing HUD</span><span class="nd">skeleton · handedness · gesture · NPU timing · FPS</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lane">
+          <div class="lane-title">Sparse inference lane</div>
+          <div class="steps infer">
+            <div class="step"><span class="nt">Snapshot</span><span class="nd">owned NV12 copy + 192 RGB palm tensor</span></div>
+            <div class="step hot"><span class="nt">Palm AI3/NPU</span><span class="nd">NVT palm model through nvts_npu_run</span></div>
+            <div class="step"><span class="nt">Graph Geometry</span><span class="nd">SSD decode · NMS · rotated hand ROI</span></div>
+            <div class="step"><span class="nt">Rotated Crop</span><span class="nd">224 RGB tensor sampled from original NV12</span></div>
+            <div class="step hot"><span class="nt">Landmark AI3/NPU</span><span class="nd">21 points · presence · handedness</span></div>
+            <div class="step"><span class="nt">Result Cache</span><span class="nd">projection · gesture rules · latest overlay state</span></div>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="stage" style="margin-bottom:0">
-      <div class="stage-lab">手勢命令輸出 · Gesture-to-Command</div>
-      <div class="outs">
-        <div class="node">
-          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3.2"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg>
-          <div class="txt"><span class="nt">ISP 控制</span><span class="nd">影像效果 · 模式切換（本地端）</span></div>
-        </div>
-        <div class="node">
-          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-          <div class="txt"><span class="nt">HDMI Overlay</span><span class="nd">即時辨識結果疊圖顯示</span></div>
-        </div>
-        <div class="node">
-          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="2.5"/><path d="M7.5 7.5a6.4 6.4 0 000 9M16.5 7.5a6.4 6.4 0 010 9M4.7 4.7a10.3 10.3 0 000 14.6M19.3 4.7a10.3 10.3 0 010 14.6"/></svg>
-          <div class="txt"><span class="nt">microROS Publisher</span><span class="nd">手勢 → ROS topic 指令</span></div>
+      <div class="abi-strip">
+        <div class="abi-title">C++ calculators → Zig board ABI</div>
+        <div class="abi-list">
+          <span class="abi-chip">nvts_cam_*</span>
+          <span class="abi-chip">nvts_npu_*</span>
+          <span class="abi-chip">nvts_overlay_draw_frame</span>
+          <span class="abi-chip">nvts_display_*</span>
         </div>
       </div>
     </div>
@@ -320,37 +327,41 @@ ul.future li::before{ content:"◆"; position: absolute; left: 2px; top: 1px; co
   <section class="panel results">
     <div class="shead"><span class="snum">04</span><h2 class="stitle">成果展示<span class="en">Results &amp; performance</span></h2></div>
     <div class="stats">
-      <div class="stat"><div class="big">~30<sub>FPS</sub></div><div class="sl">NPU 加速推論</div><div class="se">On-device, accelerated</div></div>
-      <div class="stat"><div class="big">○○<sub>%</sub></div><div class="sl">手勢辨識準確率</div><div class="se">Gesture accuracy</div></div>
+      <div class="stat"><div class="big">≥60<sub>FPS</sub></div><div class="sl">NPU 推論能力</div><div class="se">Live cap: camera 30 FPS</div></div>
+      <div class="stat"><div class="big">6</div><div class="sl">靜態手勢分類</div><div class="se">Open / fist / point</div></div>
       <div class="stat"><div class="big">21</div><div class="sl">手部關鍵點</div><div class="se">Hand landmarks</div></div>
-      <div class="stat"><div class="big">100<sub>%</sub></div><div class="sl">板端推論</div><div class="se">On-board, no cloud</div></div>
+      <div class="stat"><div class="big">60→22<sub>px</sub></div><div class="sl">線性回歸校正</div><div class="se">Landmark RMSE</div></div>
     </div>
     <div class="res-grid">
       <div class="subpanel chartpanel">
         <div class="sp-title">推論效能比較</div>
         <div class="sp-en">Inference throughput (FPS)</div>
         <div class="chart">
-          <div class="cbar"><div class="bar cpu" style="height:17%"><span class="v">5</span></div><span class="bl">CPU baseline</span><span class="bl" style="color:var(--faint)">上學期成果</span></div>
-          <div class="cbar"><div class="bar npu" style="height:100%"><span class="v">~30</span></div><span class="bl">AI3 / NPU</span><span class="bl" style="color:var(--faint)">本專題</span></div>
+          <div class="cbar"><div class="bar cpu" style="height:9%"><span class="v">5</span></div><span class="bl">CPU baseline</span><span class="bl" style="color:var(--faint)">上學期成果</span></div>
+          <div class="cbar"><div class="bar npu" style="height:100%"><span class="v">≥60</span></div><span class="bl">AI3 / NPU</span><span class="bl" style="color:var(--faint)">推論能力</span></div>
         </div>
-        <div class="chart-note"><span class="cn-big">≈ 6×</span><span class="cn-tx">推論吞吐提升<br>CPU-only 約 5 FPS → AI3/NPU 約 30 FPS</span></div>
+        <div class="chart-note"><span class="cn-big">≥12×</span><span class="cn-tx">CPU-only 約 5 FPS → AI3/NPU ≥60 FPS；live demo 受 camera pipeline 限制為 30 FPS</span></div>
       </div>
       <div class="subpanel">
-        <div class="sp-title">成果摘要</div>
-        <div class="sp-en">Implementation results</div>
+        <div class="sp-title">關鍵最佳化與成果摘要</div>
+        <div class="sp-en">Optimization &amp; implementation results</div>
         <table class="res">
-          <tr><td>板端平台</td><td>Novatek NT98690</td></tr>
-          <tr><td>影像輸入</td><td>IMX335 · NV12 / YUV</td></tr>
+          <tr><td>板端／影像</td><td>Novatek NT98690 · IMX335 · NV12 / YUV</td></tr>
           <tr><td>模型後端</td><td><span class="em">AI3 / NPU</span>（取代 TFLite runtime）</td></tr>
-          <tr><td>推論效能</td><td><span class="em">CPU 約 5 → NPU 約 30 FPS</span></td></tr>
-          <tr><td>本地控制</td><td>手勢控制 ISP（已完成）</td></tr>
-          <tr><td>microROS</td><td>Publisher 已設計 · network transport 開發中</td></tr>
+          <tr><td>取樣最佳化</td><td>Palm 192×192 · hand 224×224 fused NV12 crop</td></tr>
+          <tr><td>轉換成本</td><td><span class="em">p50 43.5 ms → 約 1.4 ms</span>（板端量測）</td></tr>
+          <tr><td>校正方法</td><td><span class="em">2D affine regression</span>：RMSE 60.1 px → 21.7 px</td></tr>
+          <tr><td>即時 HUD</td><td>skeleton · handedness · gesture · NPU timing · result FPS</td></tr>
         </table>
       </div>
       <div class="demos">
         <figure class="demo">
-          <div class="imgslot"><img src="gesture-demo.png" alt="板端即時手勢辨識畫面"></div>
-          <figcaption>圖 1. 板端即時手勢辨識畫面（21 landmarks · open right 1.00 · NPU 約 30 FPS）</figcaption>
+          <div class="imgslot"><img src="before" alt="量化模型造成 landmark 偏移的校正前畫面"></div>
+          <figcaption>Before：量化後 landmark 有系統性偏移，骨架未貼齊手部。</figcaption>
+        </figure>
+        <figure class="demo">
+          <div class="imgslot"><img src="after.jpg" alt="線性回歸校正後的 landmark 畫面"></div>
+          <figcaption>After：2D affine regression 校正 offset，RMSE 60.1 px → 21.7 px。</figcaption>
         </figure>
       </div>
     </div>
@@ -361,17 +372,17 @@ ul.future li::before{ content:"◆"; position: absolute; left: 2px; top: 1px; co
     <div class="shead"><span class="snum">05</span><h2 class="stitle">結論與未來展望<span class="en">Conclusion &amp; future work</span></h2></div>
     <div class="concl-grid">
       <div class="concl-text">
-        <p class="lead">本專題完成 MediaPipe Hands 核心流程在<b>聯詠 NT98690</b> 開發板上的系統移植，並以 <b>Novatek AI3/NPU</b> 取代原始 TFLite 推論後端，使手部辨識<b>由 CPU-only 約 5 FPS 提升至約 30 FPS</b>，並可依手勢控制板端 ISP，設計 microROS publisher 作為後續 ROS 整合介面。</p>
+        <p class="lead">本專題完成 MediaPipe Hands 核心流程在<b>聯詠 NT98690</b> 開發板上的系統移植，並以 <b>Novatek AI3/NPU</b> 取代原始 TFLite 推論後端，使推論能力<b>由 CPU-only 約 5 FPS 提升至至少 60 FPS</b>；目前 live demo 顯示為 30 FPS，主要受 camera／board pipeline 限制。針對量化模型造成的 landmark offset，進一步以線性回歸擬合 2D affine 校正，使骨架更貼近實際手部位置。</p>
         <ul class="future">
           <li>完成 <b>microROS network transport</b>，使手勢命令穩定發布至 ROS agent。</li>
-          <li>擴充手勢分類與 command mapping，並加入 <b>tracking gate</b> 降低 palm detector 執行頻率、支援 multi-hand。</li>
+          <li>導入 <b>PreviousLoopback + AssociationNormRect + presence gate</b>，降低 palm detector 執行頻率並避免追蹤停滯。</li>
+          <li>擴充手勢分類與 command mapping，支援 multi-hand 與更完整的互動指令。</li>
           <li>強化低光源、快速移動、遮擋情境穩定度，接軌機器人／智慧家居／無障礙設備。</li>
           <li>支援使用者自訂手勢與線上校正，提升個人化辨識準確率。</li>
-          <li>評估模型量化與功耗最佳化，兼顧板端即時性與長時間運作續航。</li>
         </ul>
       </div>
       <div class="qr-panel">
-        <div class="qr-box"><img src="demo-qr.jpeg" alt="Demo 影片 QR code"></div>
+        <div class="qr-box"><img src="video_qrcode.png" alt="Demo 影片 QR code"></div>
         <div class="qr-cap">
           <div class="qt">Demo 影片</div>
           <div class="qs">掃描觀看系統運作展示</div>
@@ -383,4 +394,3 @@ ul.future li::before{ content:"◆"; position: absolute; left: 2px; top: 1px; co
 </div>
 </body>
 </html>
-
